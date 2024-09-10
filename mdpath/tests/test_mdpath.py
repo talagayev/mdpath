@@ -10,6 +10,7 @@ import pytest
 import networkx as nx
 import mdpath
 from multiprocessing import Pool
+from mdpath.src.structure import StructureCalculations
 import mdpath.mdpath
 import mdpath.mdpath
 import mdpath.src
@@ -55,35 +56,35 @@ def test_calculate_distance():
     atom1 = (0.0, 0.0, 0.0)
     atom2 = (0.0, 0.0, 0.0)
     expected_distance = 0.0
-    assert mdpath.src.structure.calculate_distance(atom1, atom2) == pytest.approx(
+    assert StructureCalculations.calculate_distance(atom1, atom2) == pytest.approx(
         expected_distance
     )
 
     atom1 = (1.0, 0.0, 0.0)
     atom2 = (0.0, 0.0, 0.0)
     expected_distance = 1.0
-    assert mdpath.src.structure.calculate_distance(atom1, atom2) == pytest.approx(
+    assert StructureCalculations.calculate_distance(atom1, atom2) == pytest.approx(
         expected_distance
     )
 
     atom1 = (0.0, 1.0, 0.0)
     atom2 = (0.0, 0.0, 0.0)
     expected_distance = 1.0
-    assert mdpath.src.structure.calculate_distance(atom1, atom2) == pytest.approx(
+    assert StructureCalculations.calculate_distance(atom1, atom2) == pytest.approx(
         expected_distance
     )
 
     atom1 = (0.0, 0.0, 1.0)
     atom2 = (0.0, 0.0, 0.0)
     expected_distance = 1.0
-    assert mdpath.src.structure.calculate_distance(atom1, atom2) == pytest.approx(
+    assert StructureCalculations.calculate_distance(atom1, atom2) == pytest.approx(
         expected_distance
     )
 
     atom1 = (1.0, 1.0, 1.0)
     atom2 = (0.0, 0.0, 0.0)
     expected_distance = np.sqrt(3)
-    assert mdpath.src.structure.calculate_distance(atom1, atom2) == pytest.approx(
+    assert StructureCalculations.calculate_distance(atom1, atom2) == pytest.approx(
         expected_distance
     )
 
