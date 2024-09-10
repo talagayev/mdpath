@@ -53,38 +53,41 @@ def test_mdpath_imported():
 
 
 def test_calculate_distance():
+
+    DistanceCalculation = StructureCalculations(None)
+    
     atom1 = (0.0, 0.0, 0.0)
     atom2 = (0.0, 0.0, 0.0)
     expected_distance = 0.0
-    assert StructureCalculations.calculate_distance(atom1, atom2) == pytest.approx(
+    assert DistanceCalculation.calculate_distance(atom1, atom2) == pytest.approx(
         expected_distance
     )
 
     atom1 = (1.0, 0.0, 0.0)
     atom2 = (0.0, 0.0, 0.0)
     expected_distance = 1.0
-    assert StructureCalculations.calculate_distance(atom1, atom2) == pytest.approx(
+    assert DistanceCalculation.calculate_distance(atom1, atom2) == pytest.approx(
         expected_distance
     )
 
     atom1 = (0.0, 1.0, 0.0)
     atom2 = (0.0, 0.0, 0.0)
     expected_distance = 1.0
-    assert StructureCalculations.calculate_distance(atom1, atom2) == pytest.approx(
+    assert DistanceCalculation.calculate_distance(atom1, atom2) == pytest.approx(
         expected_distance
     )
 
     atom1 = (0.0, 0.0, 1.0)
     atom2 = (0.0, 0.0, 0.0)
     expected_distance = 1.0
-    assert StructureCalculations.calculate_distance(atom1, atom2) == pytest.approx(
+    assert DistanceCalculation.calculate_distance(atom1, atom2) == pytest.approx(
         expected_distance
     )
 
     atom1 = (1.0, 1.0, 1.0)
     atom2 = (0.0, 0.0, 0.0)
     expected_distance = np.sqrt(3)
-    assert StructureCalculations.calculate_distance(atom1, atom2) == pytest.approx(
+    assert DistanceCalculation.calculate_distance(atom1, atom2) == pytest.approx(
         expected_distance
     )
 
