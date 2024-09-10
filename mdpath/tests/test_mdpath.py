@@ -54,7 +54,7 @@ def test_mdpath_imported():
 
 def test_calculate_distance():
 
-    DistanceCalculation = StructureCalculations(None)
+    DistanceCalculation = StructureCalculations(pdb = "test_topology.pdb")
     
     atom1 = (0.0, 0.0, 0.0)
     atom2 = (0.0, 0.0, 0.0)
